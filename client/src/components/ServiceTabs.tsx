@@ -7,25 +7,35 @@ export default function ServiceTabs() {
   const [activeTab, setActiveTab] = useState("telecom");
   const [activeSubTab, setActiveSubTab] = useState<string | null>(null);
   
-  // Check for hash in URL on initial load
+  // Check for query parameters or hash in URL on initial load
   useEffect(() => {
+    // First check for URL search params (from footer links)
+    const params = new URLSearchParams(window.location.search);
+    const tabParam = params.get('tab');
+    const subTabParam = params.get('subtab');
+
+    if (tabParam) {
+      const tabExists = serviceData.find(tab => tab.id === tabParam);
+      if (tabExists) {
+        setActiveTab(tabParam);
+        
+        if (subTabParam) {
+          // Find if the subtab exists in this tab
+          const subTabExists = tabExists.subTabs.find(subTab => subTab.id === subTabParam);
+          if (subTabExists) {
+            setActiveSubTab(subTabParam);
+          }
+        }
+        return; // Exit early if we found tab from query params
+      }
+    }
+
+    // If no query params, check for hash (backward compatibility)
     const hash = window.location.hash.replace('#', '');
     if (hash) {
       const tabExists = serviceData.find(tab => tab.id === hash);
       if (tabExists) {
         setActiveTab(hash);
-        
-        // Check if we have a stored subtab from a footer link click
-        const storedSubTab = sessionStorage.getItem('serviceSubTab');
-        if (storedSubTab) {
-          // Find if the subtab exists in this tab
-          const subTabExists = tabExists.subTabs.find(subTab => subTab.id === storedSubTab);
-          if (subTabExists) {
-            setActiveSubTab(storedSubTab);
-          }
-          // Clear the stored value after use
-          sessionStorage.removeItem('serviceSubTab');
-        }
       }
     }
   }, []);
