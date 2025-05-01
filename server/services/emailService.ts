@@ -119,7 +119,12 @@ export async function sendAutoReplyEmail(formData: ContactFormValues): Promise<b
 
 // Function to send notification email for quote requests
 export async function sendQuoteEmail(formData: QuoteFormValues): Promise<boolean> {
+  console.log('Preparing to send quote notification email to admin...');
   try {
+    // Log environment variables availability (without exposing values)
+    console.log('MAIL_FROM environment variable exists:', !!process.env.MAIL_FROM);
+    console.log('MAIL_TO environment variable exists:', !!process.env.MAIL_TO);
+    
     // Prepare the email content
     const mailOptions = {
       from: process.env.MAIL_FROM,
@@ -156,19 +161,30 @@ export async function sendQuoteEmail(formData: QuoteFormValues): Promise<boolean
       `,
     };
 
+    console.log('Quote email options prepared, attempting to send...');
+    
     // Send the email
     const info = await transporter.sendMail(mailOptions);
     console.log('Quote email sent successfully:', info.messageId);
     return true;
   } catch (error) {
     console.error('Error sending quote email:', error);
+    // More detailed error logging
+    if (error instanceof Error) {
+      console.error('Error message:', error.message);
+      console.error('Error stack:', error.stack);
+    }
     return false;
   }
 }
 
 // Function to send auto-reply to the quote form submitter
 export async function sendQuoteAutoReplyEmail(formData: QuoteFormValues): Promise<boolean> {
+  console.log('Preparing to send quote auto-reply email to:', formData.email);
   try {
+    // Log environment variables availability (without exposing values)
+    console.log('MAIL_FROM environment variable exists:', !!process.env.MAIL_FROM);
+    
     // Prepare the email content
     const mailOptions = {
       from: process.env.MAIL_FROM,
@@ -213,12 +229,19 @@ export async function sendQuoteAutoReplyEmail(formData: QuoteFormValues): Promis
       `,
     };
 
+    console.log('Quote auto-reply email options prepared, attempting to send...');
+    
     // Send the email
     const info = await transporter.sendMail(mailOptions);
     console.log('Quote auto-reply email sent successfully:', info.messageId);
     return true;
   } catch (error) {
     console.error('Error sending quote auto-reply email:', error);
+    // More detailed error logging
+    if (error instanceof Error) {
+      console.error('Error message:', error.message);
+      console.error('Error stack:', error.stack);
+    }
     return false;
   }
 }
