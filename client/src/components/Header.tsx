@@ -33,9 +33,7 @@ export default function Header() {
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
             <Link href="/" className="flex items-center h-10">
-              <div className="bg-wavered text-white font-heading font-bold rounded px-2 py-1 mr-2">
-                WAVE<span className="text-white font-medium">TXT</span>
-              </div>
+              <img src="/assets/WAVETXT-logo.svg" alt="WAVETXT Logo" className="h-9 mr-2" />
               <span className="text-wavegray-700 font-medium hidden sm:inline-block">LTD</span>
             </Link>
           </div>
