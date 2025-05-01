@@ -34,10 +34,6 @@ export default function Footer() {
                 <a 
                   href="/services?tab=telecom" 
                   className="hover:text-wavered transition-colors"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.location.href = "/services?tab=telecom";
-                  }}
                 >
                   Telecommunications
                 </a>
@@ -46,10 +42,6 @@ export default function Footer() {
                 <a 
                   href="/services?tab=marketing" 
                   className="hover:text-wavered transition-colors"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.location.href = "/services?tab=marketing";
-                  }}
                 >
                   Marketing Solutions
                 </a>
@@ -58,10 +50,6 @@ export default function Footer() {
                 <a 
                   href="/services?tab=it" 
                   className="hover:text-wavered transition-colors"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.location.href = "/services?tab=it";
-                  }}
                 >
                   Information Technology
                 </a>
@@ -70,10 +58,6 @@ export default function Footer() {
                 <a 
                   href="/services?tab=strategy" 
                   className="hover:text-wavered transition-colors"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.location.href = "/services?tab=strategy";
-                  }}
                 >
                   Business Strategy Consulting
                 </a>
