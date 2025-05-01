@@ -4,11 +4,15 @@ import type { ContactFormValues } from '@shared/schema';
 // Create a transporter with Hostinger SMTP settings
 const transporter = nodemailer.createTransport({
   host: process.env.MAIL_HOST,
-  port: Number(process.env.MAIL_PORT),
-  secure: Number(process.env.MAIL_PORT) === 465, // true for 465, false for other ports
+  port: 587, // Using 587 for TLS as confirmed by our tests
+  secure: false, // TLS requires secure:false but will upgrade connection
   auth: {
     user: process.env.MAIL_USER,
     pass: process.env.MAIL_PASSWORD,
+  },
+  tls: {
+    // Do not fail on invalid certs
+    rejectUnauthorized: false
   },
 });
 
