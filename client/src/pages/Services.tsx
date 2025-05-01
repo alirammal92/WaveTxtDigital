@@ -42,9 +42,9 @@ export default function Services() {
               </div>
               
               <div className="bg-wavegray-100 rounded-lg p-6">
-                <h3 className="text-xl font-heading font-semibold text-wavegray-900 mb-2">Do you offer services outside the MENA region?</h3>
+                <h3 className="text-xl font-heading font-semibold text-wavegray-900 mb-2">Do you offer services outside the EMEA region?</h3>
                 <p className="text-wavegray-700">
-                  While our primary focus is on the MENA region, we do serve clients globally. Our solutions are scalable and adaptable to various markets and regulatory environments.
+                  While our primary focus is on the EMEA region, we do serve clients globally. Our solutions are scalable and adaptable to various markets and regulatory environments.
                 </p>
               </div>
               

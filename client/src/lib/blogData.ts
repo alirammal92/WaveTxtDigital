@@ -35,9 +35,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: "3",
-    title: "Digital Transformation Success Stories in the MENA Region",
-    excerpt: "Explore how companies in the Middle East and North Africa are successfully implementing digital transformation strategies.",
-    content: "Digital transformation is no longer optional for businesses operating in the MENA region. As markets evolve and customer expectations shift, companies that embrace digital technologies are positioning themselves for long-term success...",
+    title: "Digital Transformation Success Stories in the EMEA Region",
+    excerpt: "Explore how companies in Europe, the Middle East and Africa are successfully implementing digital transformation strategies.",
+    content: "Digital transformation is no longer optional for businesses operating in the EMEA region. As markets evolve and customer expectations shift, companies that embrace digital technologies are positioning themselves for long-term success...",
     date: "2023-06-10",
     readTime: 6,
     imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
