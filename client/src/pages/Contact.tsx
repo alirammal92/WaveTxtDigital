@@ -49,7 +49,7 @@ export default function Contact() {
               </div>
               <h3 className="text-xl font-heading font-semibold text-wavegray-900 mb-2">Call Us</h3>
               <p className="text-wavegray-700">
-                +961 70093352<br/>
+                +357 24 812050<br/>
                 info@wavetxt.com
               </p>
             </div>
