@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { serviceData } from "@/lib/servicesData";
+import * as Lucide from "lucide-react";
 
 export default function ServiceTabs() {
   const [activeTab, setActiveTab] = useState("telecom");
@@ -27,37 +28,57 @@ export default function ServiceTabs() {
   // Get current tab and sub-tab data
   const currentTab = serviceData.find(tab => tab.id === activeTab);
   const currentSubTab = currentTab?.subTabs.find(subTab => subTab.id === activeSubTab);
+
+  // Function to render icon dynamically
+  const renderIcon = (iconName: string) => {
+    const IconComponent = (Lucide as any)[iconName.charAt(0).toUpperCase() + iconName.slice(1)];
+    return IconComponent ? <IconComponent className="w-5 h-5 mb-1" /> : null;
+  };
   
   return (
-    <div>
-      {/* Service Tabs */}
-      <div className="service-tabs mb-8">
-        <div className="flex flex-wrap border-b border-wavegray-300">
-          {serviceData.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => handleTabClick(tab.id)}
-              className={`service-tab-button ${activeTab === tab.id ? 'active' : ''}`}
-            >
-              {tab.title}
-            </button>
-          ))}
-        </div>
+    <div className="container mx-auto px-4 py-12">
+      <h2 className="text-3xl font-heading font-bold text-center mb-12">Our Services</h2>
+      
+      {/* Main Service Tabs */}
+      <div className="flex flex-wrap justify-center mb-10">
+        {serviceData.map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => handleTabClick(tab.id)}
+            className={`flex flex-col items-center px-6 py-4 mx-2 mb-4 rounded-lg transition-all ${
+              activeTab === tab.id 
+                ? 'bg-wavered text-white shadow-lg transform -translate-y-1' 
+                : 'bg-white text-wavegray-700 hover:bg-wavegray-100 shadow'
+            }`}
+          >
+            {tab.icon && renderIcon(tab.icon)}
+            <span className="font-medium mt-1">{tab.title}</span>
+          </button>
+        ))}
       </div>
 
       {/* Tab Content */}
       {currentTab && (
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="p-6">
-            {/* Sub-tabs */}
+        <div className="bg-white rounded-xl shadow-xl overflow-hidden">
+          <div className="p-8">
+            <div className="mb-8">
+              <h3 className="text-2xl font-heading font-bold text-wavegray-900 mb-3">{currentTab.title}</h3>
+              <p className="text-wavegray-600">{currentTab.description}</p>
+            </div>
+            
+            {/* Sub-tabs Navigation */}
             {currentTab.subTabs.length > 0 && (
-              <div className="service-subtabs mb-6">
-                <div className="flex flex-wrap gap-2">
+              <div className="border-b border-wavegray-200 mb-8">
+                <div className="flex flex-wrap">
                   {currentTab.subTabs.map((subTab) => (
                     <button
                       key={subTab.id}
                       onClick={() => handleSubTabClick(subTab.id)}
-                      className={`service-subtab-button ${activeSubTab === subTab.id ? 'active' : ''}`}
+                      className={`px-6 py-3 font-medium transition-colors ${
+                        activeSubTab === subTab.id 
+                          ? 'text-wavered border-b-2 border-wavered' 
+                          : 'text-wavegray-600 hover:text-wavegray-900'
+                      }`}
                     >
                       {subTab.title}
                     </button>
@@ -68,33 +89,41 @@ export default function ServiceTabs() {
 
             {/* Sub-tab Content */}
             {currentSubTab && (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                 <div>
-                  <h3 className="text-2xl font-heading font-semibold text-wavegray-900 mb-4">{currentSubTab.title}</h3>
-                  <p className="text-wavegray-700 mb-4">
+                  <h4 className="text-2xl font-heading font-semibold text-wavegray-900 mb-4">{currentSubTab.title}</h4>
+                  <p className="text-wavegray-700 mb-6">
                     {currentSubTab.description}
                   </p>
-                  <ul className="space-y-2 mb-6">
-                    {currentSubTab.features.map((feature, index) => (
-                      <li key={index} className="flex items-start">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-wavered mt-1 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                        </svg>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link href="/get-quote">
-                    <a className="inline-block bg-wavered text-white px-6 py-3 rounded-md font-medium hover:bg-red-700 transition-colors">
+                  <div className="bg-wavegray-50 p-6 rounded-lg mb-6">
+                    <h5 className="font-medium mb-4 text-wavegray-800">Key Features:</h5>
+                    <ul className="space-y-3">
+                      {currentSubTab.features.map((feature, index) => (
+                        <li key={index} className="flex items-start">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-wavered mt-1 mr-3 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                          </svg>
+                          <span className="text-wavegray-700">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="flex space-x-4">
+                    <Link href="/get-quote" className="inline-block bg-wavered text-white px-6 py-3 rounded-md font-medium hover:bg-red-700 transition-colors">
                       {currentSubTab.ctaText}
-                    </a>
-                  </Link>
+                    </Link>
+                    <Link href="/contact" className="inline-block border border-wavered text-wavered px-6 py-3 rounded-md font-medium hover:bg-wavered hover:text-white transition-colors">
+                      Contact Us
+                    </Link>
+                  </div>
                 </div>
-                <div>
+                <div className="relative h-full">
+                  <div className="absolute -top-3 -right-3 w-20 h-20 bg-wavered/10 rounded-full"></div>
+                  <div className="absolute -bottom-3 -left-3 w-16 h-16 bg-wavered/10 rounded-full"></div>
                   <img 
                     src={currentSubTab.imageUrl} 
                     alt={currentSubTab.title} 
-                    className="rounded-lg shadow-md w-full"
+                    className="rounded-lg shadow-lg w-full h-auto relative z-10"
                   />
                 </div>
               </div>
