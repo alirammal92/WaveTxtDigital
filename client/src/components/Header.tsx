@@ -1,6 +1,7 @@
 import { Link, useLocation } from "wouter";
 import { useState, useEffect } from "react";
 import { useMobile } from "@/hooks/use-mobile";
+import logoImg from "../assets/WAVETXT-logo-Sig.png";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,8 +34,7 @@ export default function Header() {
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
             <Link href="/" className="flex items-center h-10">
-              <img src="/WAVETXT-logo-Sig.png" alt="WAVETXT Logo" className="h-9 mr-2" />
-              <span className="text-wavegray-700 font-medium hidden sm:inline-block">LTD</span>
+              <img src={logoImg} alt="WAVETXT Logo" className="h-9" />
             </Link>
           </div>
           

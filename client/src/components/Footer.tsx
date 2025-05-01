@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import ServiceLink from "@/components/ServiceLink";
+import logoImg from "../assets/WAVETXT-logo-Sig.png";
 
 export default function Footer() {
   return (
@@ -8,8 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
             <Link href="/" className="flex items-center h-10 mb-4">
-              <img src="/WAVETXT-logo-Sig.png" alt="WAVETXT Logo" className="h-8 mr-2" />
-              <span className="text-white font-medium">LTD</span>
+              <img src={logoImg} alt="WAVETXT Logo" className="h-8" />
             </Link>
             <p className="mb-4">
               Leading telecom and marketing solutions provider serving businesses across the MENA region.
