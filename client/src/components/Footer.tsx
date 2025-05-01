@@ -59,8 +59,6 @@ export default function Footer() {
               <li><Link href="/services" className="hover:text-wavered transition-colors">Services</Link></li>
               <li><Link href="/get-quote" className="hover:text-wavered transition-colors">Get Quote</Link></li>
               <li><Link href="/contact" className="hover:text-wavered transition-colors">Contact Us</Link></li>
-              <li><Link href="/blog" className="hover:text-wavered transition-colors">Blog</Link></li>
-              <li><Link href="/partners" className="hover:text-wavered transition-colors">Partners</Link></li>
             </ul>
           </div>
           
@@ -72,7 +70,7 @@ export default function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span>123 Business Avenue<br/>Limassol, Cyprus</span>
+                <span>Kalimnou 1, "Q MERITO", 4th Floor<br/>Agios Nikolaos, Kamares<br/>6037 Larnaca, Cyprus</span>
               </li>
               <li className="flex items-start">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-wavered mt-1 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -92,7 +90,8 @@ export default function Footer() {
         
         <div className="pt-8 border-t border-wavegray-700 text-center md:flex md:justify-between md:text-left">
           <div className="mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} WAVETXT LTD. All rights reserved.
+            &copy; {new Date().getFullYear()} WAVETXT LTD. All rights reserved.<br />
+            <span className="text-sm">Registration Number: HE 474402 | Founded by Ali Rammal in 2025</span>
           </div>
           <div>
             <Link href="#" className="inline-block mx-2 hover:text-wavered transition-colors">Privacy Policy</Link>

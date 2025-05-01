@@ -11,8 +11,6 @@ import About from "@/pages/About";
 import Services from "@/pages/Services";
 import GetQuote from "@/pages/GetQuote";
 import Contact from "@/pages/Contact";
-import Blog from "@/pages/Blog";
-import Partners from "@/pages/Partners";
 import { useEffect } from "react";
 import { initGA, trackPageView } from "@/lib/ga";
 
@@ -31,8 +29,6 @@ function Router() {
         <Route path="/services" component={Services} />
         <Route path="/get-quote" component={GetQuote} />
         <Route path="/contact" component={Contact} />
-        <Route path="/blog" component={Blog} />
-        <Route path="/partners" component={Partners} />
         <Route component={NotFound} />
       </Switch>
       <Footer />

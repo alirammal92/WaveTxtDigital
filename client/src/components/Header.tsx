@@ -57,12 +57,6 @@ export default function Header() {
             <Link href="/contact" className={`text-wavegray-700 hover:text-wavered font-medium transition-colors ${isActive('/contact') && 'text-wavered'}`}>
               Contact Us
             </Link>
-            <Link href="/blog" className={`text-wavegray-700 hover:text-wavered font-medium transition-colors ${isActive('/blog') && 'text-wavered'}`}>
-              Blog
-            </Link>
-            <Link href="/partners" className={`text-wavegray-700 hover:text-wavered font-medium transition-colors ${isActive('/partners') && 'text-wavered'}`}>
-              Partners
-            </Link>
             <Link href="/contact" className="ml-4 bg-wavered text-white px-4 py-2 rounded-md font-medium hover:bg-red-700 transition-colors">
               Book a Consultation
             </Link>
@@ -106,12 +100,6 @@ export default function Header() {
               </Link>
               <Link href="/contact" className={`text-wavegray-700 hover:text-wavered font-medium transition-colors ${isActive('/contact') && 'text-wavered'}`}>
                 Contact Us
-              </Link>
-              <Link href="/blog" className={`text-wavegray-700 hover:text-wavered font-medium transition-colors ${isActive('/blog') && 'text-wavered'}`}>
-                Blog
-              </Link>
-              <Link href="/partners" className={`text-wavegray-700 hover:text-wavered font-medium transition-colors ${isActive('/partners') && 'text-wavered'}`}>
-                Partners
               </Link>
               <Link href="/contact" className="w-full bg-wavered text-white px-4 py-2 rounded-md font-medium hover:bg-red-700 transition-colors text-center">
                 Book a Consultation
