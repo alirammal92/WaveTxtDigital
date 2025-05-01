@@ -16,7 +16,7 @@ export default function About() {
             <div>
               <h2 className="text-3xl font-heading font-bold text-wavegray-900 mb-6">Our Story</h2>
               <p className="text-wavegray-700 mb-4">
-                Founded in Cyprus, WAVETXT LTD began with a vision to bridge the gap between businesses and their customers through effective communication solutions. What started as a small telecom service provider has evolved into a comprehensive marketing and technology solutions company.
+                Founded in 2025 by Ali Rammal in Cyprus, WAVETXT LTD began with a vision to bridge the gap between businesses and their customers through effective communication solutions. What started as a telecom service provider has evolved into a comprehensive marketing and technology solutions company (Registration Number: HE 474402).
               </p>
               <p className="text-wavegray-700 mb-4">
                 Our journey has been marked by consistent innovation and an unwavering commitment to helping our clients succeed in an increasingly digital world. We've expanded our services to meet the evolving needs of businesses in the MENA region, combining local market knowledge with global best practices.
@@ -147,15 +147,11 @@ export default function About() {
               Contact our team today to learn more about how WAVETXT LTD can help your business grow with our comprehensive telecom and marketing solutions.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/get-quote">
-                <a className="bg-wavered text-white px-6 py-3 rounded-md font-medium hover:bg-red-700 transition-colors">
-                  Get a Quote
-                </a>
+              <Link href="/get-quote" className="bg-wavered text-white px-6 py-3 rounded-md font-medium hover:bg-red-700 transition-colors">
+                Get a Quote
               </Link>
-              <Link href="/contact">
-                <a className="bg-white border border-wavegray-300 text-wavegray-700 px-6 py-3 rounded-md font-medium hover:bg-wavegray-100 transition-colors">
-                  Contact Us
-                </a>
+              <Link href="/contact" className="bg-white border border-wavegray-300 text-wavegray-700 px-6 py-3 rounded-md font-medium hover:bg-wavegray-100 transition-colors">
+                Contact Us
               </Link>
             </div>
           </div>

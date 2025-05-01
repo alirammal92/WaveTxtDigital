@@ -49,8 +49,8 @@ export default function Contact() {
               </div>
               <h3 className="text-xl font-heading font-semibold text-wavegray-900 mb-2">Call Us</h3>
               <p className="text-wavegray-700">
-                +357 12345678<br/>
-                +1 (123) 456-7890
+                +961 70093352<br/>
+                info@wavetxt.com
               </p>
             </div>
           </div>
