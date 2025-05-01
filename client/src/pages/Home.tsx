@@ -70,11 +70,11 @@ export default function Home() {
               
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div className="bg-wavegray-100 p-4 rounded-lg">
-                  <div className="text-wavered text-2xl font-bold mb-2">100+</div>
+                  <div className="text-wavered text-2xl font-bold mb-2">50+</div>
                   <div className="text-wavegray-700">Satisfied clients</div>
                 </div>
                 <div className="bg-wavegray-100 p-4 rounded-lg">
-                  <div className="text-wavered text-2xl font-bold mb-2">25+</div>
+                  <div className="text-wavered text-2xl font-bold mb-2">10+</div>
                   <div className="text-wavegray-700">Countries served</div>
                 </div>
 

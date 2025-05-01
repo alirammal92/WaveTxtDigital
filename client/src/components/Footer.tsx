@@ -30,12 +30,12 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-heading font-semibold text-lg mb-4">Our Services</h4>
             <ul className="space-y-2">
-              <li><Link href="/services#telecom" className="hover:text-wavered transition-colors">A2P SMS</Link></li>
-              <li><Link href="/services#marketing" className="hover:text-wavered transition-colors">WhatsApp Business</Link></li>
-              <li><Link href="/services#marketing" className="hover:text-wavered transition-colors">Social Media Marketing</Link></li>
-              <li><Link href="/services#marketing" className="hover:text-wavered transition-colors">Lead Generation</Link></li>
-              <li><Link href="/services#it" className="hover:text-wavered transition-colors">Workflow Automation</Link></li>
-              <li><Link href="/services#it" className="hover:text-wavered transition-colors">Website Design</Link></li>
+              <li><Link href="/services#telecom" onClick={() => sessionStorage.setItem('serviceSubTab', 'a2p-sms')} className="hover:text-wavered transition-colors">A2P SMS</Link></li>
+              <li><Link href="/services#marketing" onClick={() => sessionStorage.setItem('serviceSubTab', 'whatsapp-business')} className="hover:text-wavered transition-colors">WhatsApp Business</Link></li>
+              <li><Link href="/services#marketing" onClick={() => sessionStorage.setItem('serviceSubTab', 'social-media')} className="hover:text-wavered transition-colors">Social Media Marketing</Link></li>
+              <li><Link href="/services#marketing" onClick={() => sessionStorage.setItem('serviceSubTab', 'lead-gen')} className="hover:text-wavered transition-colors">Lead Generation</Link></li>
+              <li><Link href="/services#it" onClick={() => sessionStorage.setItem('serviceSubTab', 'workflow')} className="hover:text-wavered transition-colors">Workflow Automation</Link></li>
+              <li><Link href="/services#it" onClick={() => sessionStorage.setItem('serviceSubTab', 'website')} className="hover:text-wavered transition-colors">Website Design</Link></li>
             </ul>
           </div>
           

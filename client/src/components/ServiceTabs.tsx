@@ -14,22 +14,39 @@ export default function ServiceTabs() {
       const tabExists = serviceData.find(tab => tab.id === hash);
       if (tabExists) {
         setActiveTab(hash);
+        
+        // Check if we have a stored subtab from a footer link click
+        const storedSubTab = sessionStorage.getItem('serviceSubTab');
+        if (storedSubTab) {
+          // Find if the subtab exists in this tab
+          const subTabExists = tabExists.subTabs.find(subTab => subTab.id === storedSubTab);
+          if (subTabExists) {
+            setActiveSubTab(storedSubTab);
+          }
+          // Clear the stored value after use
+          sessionStorage.removeItem('serviceSubTab');
+        }
       }
     }
   }, []);
   
   // Set initial active sub-tab when component mounts or active tab changes
   useEffect(() => {
-    const currentTab = serviceData.find(tab => tab.id === activeTab);
-    if (currentTab && currentTab.subTabs.length > 0) {
-      setActiveSubTab(currentTab.subTabs[0].id);
-    } else {
-      setActiveSubTab(null);
+    // Only set the default subtab if no subtab is already set
+    // This prevents overriding a subtab that was set from sessionStorage
+    if (!activeSubTab) {
+      const currentTab = serviceData.find(tab => tab.id === activeTab);
+      if (currentTab && currentTab.subTabs.length > 0) {
+        setActiveSubTab(currentTab.subTabs[0].id);
+      } else {
+        setActiveSubTab(null);
+      }
     }
-  }, [activeTab]);
+  }, [activeTab, activeSubTab]);
   
   const handleTabClick = (tabId: string) => {
     setActiveTab(tabId);
+    setActiveSubTab(null); // Reset subtab when changing main tab
   };
   
   const handleSubTabClick = (subTabId: string) => {
