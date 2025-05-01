@@ -119,9 +119,20 @@ export default function ServiceTabs() {
   const currentSubTab = currentTab?.subTabs.find(subTab => subTab.id === activeSubTab);
 
   // Function to render icon dynamically
-  const renderIcon = (iconName: string) => {
+  const renderIcon = (iconName: string, size: "small" | "medium" | "large" = "medium") => {
     const IconComponent = (Lucide as any)[iconName.charAt(0).toUpperCase() + iconName.slice(1)];
-    return IconComponent ? <IconComponent className="w-5 h-5 mb-1" /> : null;
+    
+    const sizeClasses = {
+      small: "w-4 h-4",
+      medium: "w-5 h-5",
+      large: "w-6 h-6"
+    };
+    
+    return IconComponent ? (
+      <IconComponent 
+        className={`${sizeClasses[size]} ${size === "medium" ? "mb-1" : ""} text-wavered flex-shrink-0`} 
+      />
+    ) : null;
   };
   
   return (
@@ -140,7 +151,7 @@ export default function ServiceTabs() {
                 : 'bg-white text-wavegray-700 hover:bg-wavegray-100 shadow'
             }`}
           >
-            {tab.icon && renderIcon(tab.icon)}
+            {tab.icon && renderIcon(tab.icon, "medium")}
             <span className="font-medium mt-1">{tab.title}</span>
           </button>
         ))}
@@ -151,7 +162,10 @@ export default function ServiceTabs() {
         <div className="bg-white rounded-xl shadow-xl overflow-hidden">
           <div className="p-8">
             <div className="mb-8">
-              <h3 className="text-2xl font-heading font-bold text-wavegray-900 mb-3">{currentTab.title}</h3>
+              <div className="flex items-center mb-3">
+                {currentTab.icon && renderIcon(currentTab.icon, "large")}
+                <h3 className="text-2xl font-heading font-bold text-wavegray-900 ml-2">{currentTab.title}</h3>
+              </div>
               <p className="text-wavegray-600">{currentTab.description}</p>
             </div>
             
@@ -180,7 +194,7 @@ export default function ServiceTabs() {
             {currentSubTab && (
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                 <div>
-                  <h4 className="text-2xl font-heading font-semibold text-wavegray-900 mb-4">{currentSubTab.title}</h4>
+                  <h4 className="text-2xl font-heading font-semibold text-wavegray-900 mb-2">{currentSubTab.title}</h4>
                   <p className="text-wavegray-700 mb-6">
                     {currentSubTab.description}
                   </p>
