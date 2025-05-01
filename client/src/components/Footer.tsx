@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import ServiceLink from "@/components/ServiceLink";
 
 export default function Footer() {
   return (
@@ -31,36 +32,36 @@ export default function Footer() {
             <h4 className="text-white font-heading font-semibold text-lg mb-4">Our Services</h4>
             <ul className="space-y-2">
               <li>
-                <a 
-                  href="/services?tab=telecom" 
+                <ServiceLink
+                  serviceId="telecom"
                   className="hover:text-wavered transition-colors"
                 >
                   Telecommunications
-                </a>
+                </ServiceLink>
               </li>
               <li>
-                <a 
-                  href="/services?tab=marketing" 
+                <ServiceLink
+                  serviceId="marketing"
                   className="hover:text-wavered transition-colors"
                 >
                   Marketing Solutions
-                </a>
+                </ServiceLink>
               </li>
               <li>
-                <a 
-                  href="/services?tab=it" 
+                <ServiceLink
+                  serviceId="it"
                   className="hover:text-wavered transition-colors"
                 >
                   Information Technology
-                </a>
+                </ServiceLink>
               </li>
               <li>
-                <a 
-                  href="/services?tab=strategy" 
+                <ServiceLink
+                  serviceId="strategy"
                   className="hover:text-wavered transition-colors"
                 >
                   Business Strategy Consulting
-                </a>
+                </ServiceLink>
               </li>
             </ul>
           </div>

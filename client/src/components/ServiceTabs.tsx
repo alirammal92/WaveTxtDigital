@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { serviceData } from "@/lib/servicesData";
 import * as Lucide from "lucide-react";
 
@@ -95,13 +95,23 @@ export default function ServiceTabs() {
     }
   }, [activeTab, activeSubTab]);
   
+  // Current location and setter
+  const [location, setLocation] = useLocation();
+  
   const handleTabClick = (tabId: string) => {
+    // Update active tab in state
     setActiveTab(tabId);
     setActiveSubTab(null); // Reset subtab when changing main tab
+    
+    // Update URL to reflect the tab change (without page refresh)
+    setLocation(`/services?tab=${tabId}`);
   };
   
   const handleSubTabClick = (subTabId: string) => {
     setActiveSubTab(subTabId);
+    
+    // Update URL to include both tab and subtab parameters
+    setLocation(`/services?tab=${activeTab}&subtab=${subTabId}`);
   };
   
   // Get current tab and sub-tab data
