@@ -36,10 +36,26 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post(`${apiPrefix}/contact`, async (req, res) => {
     try {
       const contactData = schema.contactFormSchema.parse(req.body);
+      
+      // Save the contact form data to the database
       const [newContact] = await db.insert(schema.contacts).values(contactData).returning();
       
+      // Import email service
+      const { sendContactEmail, sendAutoReplyEmail } = await import('./services/emailService');
+      
+      // Send notification email to admin
+      const emailSent = await sendContactEmail(contactData);
+      
+      // Send auto-reply email to the user (optional)
+      await sendAutoReplyEmail(contactData).catch(err => {
+        console.error('Error sending auto-reply email:', err);
+        // Continue even if auto-reply fails
+      });
+      
       res.status(201).json({
-        message: "Contact message sent successfully",
+        message: emailSent 
+          ? "Contact message sent successfully" 
+          : "Contact saved but email delivery failed",
         data: newContact
       });
     } catch (error) {
