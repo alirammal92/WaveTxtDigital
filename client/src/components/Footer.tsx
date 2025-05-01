@@ -11,7 +11,7 @@ export default function Footer() {
               <h3 className="text-white font-semibold text-xl">WAVETXT LTD</h3>
             </Link>
             <p className="mb-4">
-              Leading telecom and marketing solutions provider serving businesses across the MENA region.
+              Leading telecom and marketing solutions provider serving businesses across the EMEA region.
             </p>
             <div className="flex space-x-4">
               <a href="https://www.facebook.com/profile.php?id=61575525382575" target="_blank" rel="noopener noreferrer" className="text-wavegray-300 hover:text-wavered transition-colors">

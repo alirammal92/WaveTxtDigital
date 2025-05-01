@@ -13,7 +13,7 @@ export default function Home() {
                 Innovative <span className="text-wavered">Telecom & Marketing</span> Solutions
               </h1>
               <p className="mt-6 text-lg text-wavegray-700 leading-relaxed">
-                WAVETXT LTD delivers comprehensive telecom and marketing solutions designed to help businesses in the MENA region connect with customers and grow their market presence.
+                WAVETXT LTD delivers comprehensive telecom and marketing solutions designed to help businesses in the EMEA region connect with customers and grow their market presence.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link href="/get-quote" className="bg-wavered text-white px-6 py-3 rounded-md font-medium hover:bg-red-700 transition-colors">
@@ -37,7 +37,7 @@ export default function Home() {
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <p className="font-medium">Trusted by 100+ businesses</p>
+                  <p className="font-medium">Trusted by businesses across EMEA</p>
                 </div>
               </div>
             </div>
@@ -62,7 +62,7 @@ export default function Home() {
             <div>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-wavegray-900 mb-6">About WAVETXT LTD</h2>
               <p className="text-wavegray-700 mb-4">
-                Founded in Cyprus, WAVETXT LTD is a leading provider of telecom and marketing solutions, serving businesses across the MENA region. We combine industry expertise with innovative technology to deliver results-driven solutions.
+                Founded in Cyprus, WAVETXT LTD is a leading provider of telecom and marketing solutions, serving businesses across the EMEA region. We combine industry expertise with innovative technology to deliver results-driven solutions.
               </p>
               <p className="text-wavegray-700 mb-6">
                 Our mission is to help businesses connect with their customers more effectively through integrated communication channels and strategic marketing approaches. We pride ourselves on our customer-first approach and commitment to excellence.
