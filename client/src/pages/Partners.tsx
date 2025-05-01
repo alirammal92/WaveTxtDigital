@@ -146,7 +146,7 @@ export default function Partners() {
                   </div>
                 </div>
                 <p className="text-wavegray-700 italic">
-                  "Our strategic partnership with WAVETXT LTD has opened new markets for our business in the MENA region. Their deep understanding of local markets coupled with cutting-edge technology makes them an invaluable partner."
+                  "Our strategic partnership with WAVETXT LTD has opened new markets for our business in the EMEA region. Their deep understanding of local markets coupled with cutting-edge technology makes them an invaluable partner."
                 </p>
               </div>
             </div>

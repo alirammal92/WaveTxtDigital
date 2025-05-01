@@ -8,7 +8,7 @@ export default function About() {
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-heading font-bold text-wavegray-900 mb-6">About WAVETXT LTD</h1>
             <p className="text-lg text-wavegray-700">
-              Leading provider of telecom and marketing solutions serving businesses across the MENA region.
+              Leading provider of telecom and marketing solutions serving businesses across the EMEA region.
             </p>
           </div>
           
@@ -19,7 +19,7 @@ export default function About() {
                 Founded in 2025 by Ali Rammal in Cyprus, WAVETXT LTD began with a vision to bridge the gap between businesses and their customers through effective communication solutions. What started as a telecom service provider has evolved into a comprehensive marketing and technology solutions company (Registration Number: HE 474402).
               </p>
               <p className="text-wavegray-700 mb-4">
-                Our journey has been marked by consistent innovation and an unwavering commitment to helping our clients succeed in an increasingly digital world. We've expanded our services to meet the evolving needs of businesses in the MENA region, combining local market knowledge with global best practices.
+                Our journey has been marked by consistent innovation and an unwavering commitment to helping our clients succeed in an increasingly digital world. We've expanded our services to meet the evolving needs of businesses in the EMEA region, combining local market knowledge with global best practices.
               </p>
               <p className="text-wavegray-700">
                 Today, we're proud to serve over 50 businesses across 10+ countries, providing them with the tools and strategies they need to connect with their customers and grow their market presence.
@@ -53,7 +53,7 @@ export default function About() {
               <div className="mb-6">
                 <h3 className="text-xl font-heading font-semibold text-wavegray-900 mb-2">Vision</h3>
                 <p className="text-wavegray-700">
-                  To be the leading provider of integrated communication and marketing solutions in the MENA region, recognized for our innovation, reliability, and customer-centric approach.
+                  To be the leading provider of integrated communication and marketing solutions in the EMEA region, recognized for our innovation, reliability, and customer-centric approach.
                 </p>
               </div>
               <div>
@@ -99,7 +99,7 @@ export default function About() {
                 </div>
                 <h3 className="text-xl font-heading font-semibold text-wavegray-900 mb-2">Industry Expertise</h3>
                 <p className="text-wavegray-700">
-                  Over 10 years of experience in telecom and marketing solutions, with deep understanding of the MENA market.
+                  Over 10 years of experience in telecom and marketing solutions, with deep understanding of the EMEA market.
                 </p>
               </div>
               
