@@ -30,12 +30,19 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-heading font-semibold text-lg mb-4">Our Services</h4>
             <ul className="space-y-2">
-              <li><Link href="/services?tab=telecom&subtab=a2p-sms" className="hover:text-wavered transition-colors">A2P SMS</Link></li>
-              <li><Link href="/services?tab=marketing&subtab=whatsapp-business" className="hover:text-wavered transition-colors">WhatsApp Business</Link></li>
-              <li><Link href="/services?tab=marketing&subtab=social-media" className="hover:text-wavered transition-colors">Social Media Marketing</Link></li>
-              <li><Link href="/services?tab=marketing&subtab=lead-gen" className="hover:text-wavered transition-colors">Lead Generation</Link></li>
-              <li><Link href="/services?tab=it&subtab=workflow" className="hover:text-wavered transition-colors">Workflow Automation</Link></li>
-              <li><Link href="/services?tab=it&subtab=website" className="hover:text-wavered transition-colors">Website Design</Link></li>
+              <li><Link href="/services?tab=telecom" className="font-semibold hover:text-wavered transition-colors">Telecommunications</Link></li>
+              <li className="pl-4"><Link href="/services?tab=telecom&subtab=a2p-sms" className="hover:text-wavered transition-colors">A2P SMS</Link></li>
+              
+              <li><Link href="/services?tab=marketing" className="font-semibold hover:text-wavered transition-colors">Marketing Solutions</Link></li>
+              <li className="pl-4"><Link href="/services?tab=marketing&subtab=whatsapp-business" className="hover:text-wavered transition-colors">WhatsApp Business</Link></li>
+              <li className="pl-4"><Link href="/services?tab=marketing&subtab=social-media" className="hover:text-wavered transition-colors">Social Media Marketing</Link></li>
+              <li className="pl-4"><Link href="/services?tab=marketing&subtab=lead-gen" className="hover:text-wavered transition-colors">Lead Generation</Link></li>
+              
+              <li><Link href="/services?tab=it" className="font-semibold hover:text-wavered transition-colors">Information Technology</Link></li>
+              <li className="pl-4"><Link href="/services?tab=it&subtab=workflow" className="hover:text-wavered transition-colors">Workflow Automation</Link></li>
+              <li className="pl-4"><Link href="/services?tab=it&subtab=website" className="hover:text-wavered transition-colors">Website Design</Link></li>
+              
+              <li><Link href="/services?tab=strategy" className="font-semibold hover:text-wavered transition-colors">Business Strategy Consulting</Link></li>
             </ul>
           </div>
           
