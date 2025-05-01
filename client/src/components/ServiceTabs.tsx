@@ -7,6 +7,17 @@ export default function ServiceTabs() {
   const [activeTab, setActiveTab] = useState("telecom");
   const [activeSubTab, setActiveSubTab] = useState<string | null>(null);
   
+  // Check for hash in URL on initial load
+  useEffect(() => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+      const tabExists = serviceData.find(tab => tab.id === hash);
+      if (tabExists) {
+        setActiveTab(hash);
+      }
+    }
+  }, []);
+  
   // Set initial active sub-tab when component mounts or active tab changes
   useEffect(() => {
     const currentTab = serviceData.find(tab => tab.id === activeTab);

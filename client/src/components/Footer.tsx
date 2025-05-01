@@ -42,12 +42,12 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-heading font-semibold text-lg mb-4">Our Services</h4>
             <ul className="space-y-2">
-              <li><Link href="/services" className="hover:text-wavered transition-colors">A2P SMS</Link></li>
-              <li><Link href="/services" className="hover:text-wavered transition-colors">WhatsApp Business</Link></li>
-              <li><Link href="/services" className="hover:text-wavered transition-colors">Social Media Marketing</Link></li>
-              <li><Link href="/services" className="hover:text-wavered transition-colors">Lead Generation</Link></li>
-              <li><Link href="/services" className="hover:text-wavered transition-colors">Workflow Automation</Link></li>
-              <li><Link href="/services" className="hover:text-wavered transition-colors">Website Design</Link></li>
+              <li><Link href="/services#telecom" className="hover:text-wavered transition-colors">A2P SMS</Link></li>
+              <li><Link href="/services#marketing" className="hover:text-wavered transition-colors">WhatsApp Business</Link></li>
+              <li><Link href="/services#marketing" className="hover:text-wavered transition-colors">Social Media Marketing</Link></li>
+              <li><Link href="/services#marketing" className="hover:text-wavered transition-colors">Lead Generation</Link></li>
+              <li><Link href="/services#it" className="hover:text-wavered transition-colors">Workflow Automation</Link></li>
+              <li><Link href="/services#it" className="hover:text-wavered transition-colors">Website Design</Link></li>
             </ul>
           </div>
           
@@ -82,7 +82,7 @@ export default function Footer() {
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-wavered mt-1 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <span>+357 12345678</span>
+                <span>+961 70093352</span>
               </li>
             </ul>
           </div>

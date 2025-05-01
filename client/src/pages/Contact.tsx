@@ -22,8 +22,9 @@ export default function Contact() {
               </div>
               <h3 className="text-xl font-heading font-semibold text-wavegray-900 mb-2">Our Location</h3>
               <p className="text-wavegray-700">
-                123 Business Avenue<br/>
-                Limassol, Cyprus
+                Kalimnou 1, "Q MERITO", 4th Floor<br/>
+                Agios Nikolaos, Kamares<br/>
+                6037 Larnaca, Cyprus
               </p>
             </div>
             
@@ -75,7 +76,7 @@ export default function Contact() {
                   </li>
                   <li className="flex justify-between">
                     <span className="font-medium">Saturday:</span>
-                    <span>10:00 AM - 2:00 PM EET</span>
+                    <span>Closed</span>
                   </li>
                   <li className="flex justify-between">
                     <span className="font-medium">Sunday:</span>

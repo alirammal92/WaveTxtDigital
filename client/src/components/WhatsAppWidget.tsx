@@ -4,8 +4,8 @@ export default function WhatsAppWidget() {
   const [isOpen, setIsOpen] = useState(false);
   
   const handleWhatsAppClick = () => {
-    // Replace with your actual WhatsApp number
-    window.open('https://wa.me/35712345678?text=Hello%20WAVETXT%2C%20I%27m%20interested%20in%20your%20services.', '_blank');
+    // WhatsApp number for WAVETXT
+    window.open('https://wa.me/96170093352?text=Hello%20WAVETXT%2C%20I%27m%20interested%20in%20your%20services.', '_blank');
   };
   
   const toggleWidget = () => {
