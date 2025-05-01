@@ -4,7 +4,7 @@ import { Link } from "wouter";
 export default function Services() {
   return (
     <main className="pt-24 pb-16">
-      <section className="py-16 bg-wavegray-100">
+      <section id="services-section" className="py-16 bg-wavegray-100">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-heading font-bold text-wavegray-900 mb-6">Our Services</h1>
@@ -21,15 +21,11 @@ export default function Services() {
               Our team can create tailored packages designed specifically for your business requirements.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/get-quote">
-                <a className="bg-wavered text-white px-6 py-3 rounded-md font-medium hover:bg-red-700 transition-colors">
-                  Request a Custom Quote
-                </a>
+              <Link href="/get-quote" className="bg-wavered text-white px-6 py-3 rounded-md font-medium hover:bg-red-700 transition-colors">
+                Request a Custom Quote
               </Link>
-              <Link href="/contact">
-                <a className="bg-white border border-wavegray-300 text-wavegray-700 px-6 py-3 rounded-md font-medium hover:bg-wavegray-100 transition-colors">
-                  Talk to an Expert
-                </a>
+              <Link href="/contact" className="bg-white border border-wavegray-300 text-wavegray-700 px-6 py-3 rounded-md font-medium hover:bg-wavegray-100 transition-colors">
+                Talk to an Expert
               </Link>
             </div>
           </div>

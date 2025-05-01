@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Link } from "wouter";
 import { serviceData } from "@/lib/servicesData";
 import * as Lucide from "lucide-react";
@@ -7,38 +7,79 @@ export default function ServiceTabs() {
   const [activeTab, setActiveTab] = useState("telecom");
   const [activeSubTab, setActiveSubTab] = useState<string | null>(null);
   
-  // Check for query parameters or hash in URL on initial load
-  useEffect(() => {
-    // First check for URL search params (from footer links)
+  // Function to update tabs based on URL
+  const updateTabsFromUrl = useCallback(() => {
+    // Parse URL parameters
     const params = new URLSearchParams(window.location.search);
     const tabParam = params.get('tab');
     const subTabParam = params.get('subtab');
-
+    
+    // Check for hash in URL (backward compatibility)
+    const hash = window.location.hash.replace('#', '');
+    
+    // If we have tab parameter, use it
     if (tabParam) {
       const tabExists = serviceData.find(tab => tab.id === tabParam);
       if (tabExists) {
         setActiveTab(tabParam);
         
+        // If we also have a subtab parameter, use it
         if (subTabParam) {
-          // Find if the subtab exists in this tab
           const subTabExists = tabExists.subTabs.find(subTab => subTab.id === subTabParam);
           if (subTabExists) {
             setActiveSubTab(subTabParam);
+          } else {
+            // If subtab doesn't exist, set to first subtab
+            setActiveSubTab(tabExists.subTabs[0]?.id || null);
           }
+        } else {
+          // No subtab specified, set to first subtab
+          setActiveSubTab(tabExists.subTabs[0]?.id || null);
         }
-        return; // Exit early if we found tab from query params
+        return true;
       }
     }
-
-    // If no query params, check for hash (backward compatibility)
-    const hash = window.location.hash.replace('#', '');
+    
+    // If no tab parameter but we have a hash, use it
     if (hash) {
       const tabExists = serviceData.find(tab => tab.id === hash);
       if (tabExists) {
         setActiveTab(hash);
+        setActiveSubTab(tabExists.subTabs[0]?.id || null);
+        return true;
       }
     }
+    
+    return false;
   }, []);
+  
+  // Check URL parameters whenever the page loads or URL changes
+  useEffect(() => {
+    updateTabsFromUrl();
+    
+    // Also listen for popstate events (browser back/forward buttons)
+    const handlePopState = () => {
+      updateTabsFromUrl();
+    };
+    
+    window.addEventListener('popstate', handlePopState);
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+    };
+  }, [updateTabsFromUrl]);
+  
+  // Scroll to the services section when tab/subtab changes
+  useEffect(() => {
+    if (activeTab) {
+      // Use setTimeout to ensure DOM has updated
+      setTimeout(() => {
+        const servicesSection = document.getElementById('services-section');
+        if (servicesSection) {
+          servicesSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, [activeTab, activeSubTab]);
   
   // Set initial active sub-tab when component mounts or active tab changes
   useEffect(() => {
