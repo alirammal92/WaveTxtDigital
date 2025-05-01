@@ -192,8 +192,8 @@ export default function ServiceTabs() {
             {currentSubTab && (
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                 <div>
-                  <h4 className="text-2xl font-heading font-semibold text-wavegray-900 mb-2">{currentSubTab.title}</h4>
-                  <p className="text-wavegray-700 mb-6">
+                  <h4 className="text-2xl font-heading font-semibold text-wavegray-900 mb-1">{currentSubTab.title}</h4>
+                  <p className="text-wavegray-700 mb-4">
                     {currentSubTab.description}
                   </p>
                   <div className="bg-wavegray-50 p-6 rounded-lg mb-6">

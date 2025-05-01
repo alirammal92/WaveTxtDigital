@@ -1,7 +1,7 @@
 export const serviceData = [
   {
     id: "telecom",
-    title: "Telecommunication",
+    title: "Telecommunications",
     description: "Comprehensive telecom solutions designed for businesses across the MENA region.",
     icon: "radio-tower",
     subTabs: [
@@ -23,7 +23,7 @@ export const serviceData = [
   },
   {
     id: "marketing",
-    title: "Marketing & Advertising",
+    title: "Marketing",
     description: "Targeted marketing strategies to help your business connect with potential customers and grow your brand.",
     icon: "megaphone",
     subTabs: [
@@ -123,7 +123,7 @@ export const serviceData = [
   },
   {
     id: "strategy",
-    title: "Marketing & Strategy Consulting",
+    title: "Business Consulting",
     description: "Expert consulting to help you develop and implement effective business and marketing strategies.",
     icon: "lightbulb",
     subTabs: [

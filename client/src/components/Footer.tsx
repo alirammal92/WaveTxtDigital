@@ -44,7 +44,7 @@ export default function Footer() {
                   serviceId="marketing"
                   className="hover:text-wavered transition-colors"
                 >
-                  Marketing Solutions
+                  Marketing
                 </ServiceLink>
               </li>
               <li>
@@ -60,7 +60,7 @@ export default function Footer() {
                   serviceId="strategy"
                   className="hover:text-wavered transition-colors"
                 >
-                  Business Strategy Consulting
+                  Business Consulting
                 </ServiceLink>
               </li>
             </ul>
