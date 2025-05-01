@@ -22,7 +22,7 @@ export default function About() {
                 Our journey has been marked by consistent innovation and an unwavering commitment to helping our clients succeed in an increasingly digital world. We've expanded our services to meet the evolving needs of businesses in the MENA region, combining local market knowledge with global best practices.
               </p>
               <p className="text-wavegray-700">
-                Today, we're proud to serve over 100 businesses across 25+ countries, providing them with the tools and strategies they need to connect with their customers and grow their market presence.
+                Today, we're proud to serve over 50 businesses across 10+ countries, providing them with the tools and strategies they need to connect with their customers and grow their market presence.
               </p>
             </div>
             <div>
