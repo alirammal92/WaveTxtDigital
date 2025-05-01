@@ -30,10 +30,54 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-heading font-semibold text-lg mb-4">Our Services</h4>
             <ul className="space-y-2">
-              <li><Link href="/services?tab=telecom" className="hover:text-wavered transition-colors">Telecommunications</Link></li>
-              <li><Link href="/services?tab=marketing" className="hover:text-wavered transition-colors">Marketing Solutions</Link></li>
-              <li><Link href="/services?tab=it" className="hover:text-wavered transition-colors">Information Technology</Link></li>
-              <li><Link href="/services?tab=strategy" className="hover:text-wavered transition-colors">Business Strategy Consulting</Link></li>
+              <li>
+                <a 
+                  href="/services?tab=telecom" 
+                  className="hover:text-wavered transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.location.href = "/services?tab=telecom";
+                  }}
+                >
+                  Telecommunications
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="/services?tab=marketing" 
+                  className="hover:text-wavered transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.location.href = "/services?tab=marketing";
+                  }}
+                >
+                  Marketing Solutions
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="/services?tab=it" 
+                  className="hover:text-wavered transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.location.href = "/services?tab=it";
+                  }}
+                >
+                  Information Technology
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="/services?tab=strategy" 
+                  className="hover:text-wavered transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.location.href = "/services?tab=strategy";
+                  }}
+                >
+                  Business Strategy Consulting
+                </a>
+              </li>
             </ul>
           </div>
           
