@@ -137,8 +137,6 @@ export default function ServiceTabs() {
   
   return (
     <div className="container mx-auto px-4 py-12">
-      <h2 className="text-3xl font-heading font-bold text-center mb-12">Our Services</h2>
-      
       {/* Main Service Tabs */}
       <div className="flex flex-wrap justify-center mb-10">
         {serviceData.map((tab) => (
