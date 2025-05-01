@@ -6,6 +6,9 @@ export default function Services() {
     <main className="pt-24 pb-16">
       <section id="services-section" className="py-16 bg-wavegray-100">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-heading font-bold text-wavegray-900 mb-4">Our Services</h1>
+          </div>
           <ServiceTabs />
           
           <div className="mt-20 text-center">
