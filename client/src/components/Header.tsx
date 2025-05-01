@@ -33,7 +33,7 @@ export default function Header() {
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
             <Link href="/" className="flex items-center h-10">
-              <img src="/assets/WAVETXT-logo-new.png" alt="WAVETXT Logo" className="h-9 mr-2" />
+              <img src="/assets/WAVETXT-logo-Sig.png" alt="WAVETXT Logo" className="h-9 mr-2" />
               <span className="text-wavegray-700 font-medium hidden sm:inline-block">LTD</span>
             </Link>
           </div>
