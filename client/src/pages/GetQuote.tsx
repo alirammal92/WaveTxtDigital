@@ -61,10 +61,8 @@ export default function GetQuote() {
               <p className="text-wavegray-700 mb-6">
                 If you have urgent requirements or prefer to speak directly with our team, contact us now.
               </p>
-              <Link href="/contact">
-                <a className="inline-block bg-wavered text-white px-6 py-3 rounded-md font-medium hover:bg-red-700 transition-colors">
-                  Contact Us
-                </a>
+              <Link href="/contact" className="inline-block bg-wavered text-white px-6 py-3 rounded-md font-medium hover:bg-red-700 transition-colors">
+                Contact Us
               </Link>
             </div>
           </div>

@@ -15,8 +15,22 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const quoteData = schema.quoteFormSchema.parse(req.body);
       const [newQuote] = await db.insert(schema.quotes).values(quoteData).returning();
       
+      // Import email service
+      const { sendQuoteEmail, sendQuoteAutoReplyEmail } = await import('./services/emailService');
+      
+      // Send notification email to admin
+      const emailSent = await sendQuoteEmail(quoteData);
+      
+      // Send auto-reply email to the user
+      await sendQuoteAutoReplyEmail(quoteData).catch(err => {
+        console.error('Error sending quote auto-reply email:', err);
+        // Continue even if auto-reply fails
+      });
+      
       res.status(201).json({
-        message: "Quote request submitted successfully",
+        message: emailSent 
+          ? "Quote request submitted successfully" 
+          : "Quote saved but email delivery failed",
         data: newQuote
       });
     } catch (error) {
