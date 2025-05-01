@@ -120,13 +120,22 @@ export default function ServiceTabs() {
 
   // Function to render icon dynamically
   const renderIcon = (iconName: string, size: "small" | "medium" | "large" = "medium") => {
-    const IconComponent = (Lucide as any)[iconName.charAt(0).toUpperCase() + iconName.slice(1)];
+    // Convert kebab-case to PascalCase (e.g., radio-tower -> RadioTower)
+    const pascalCaseName = iconName
+      .split('-')
+      .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+      .join('');
+    
+    const IconComponent = (Lucide as any)[pascalCaseName];
     
     const sizeClasses = {
       small: "w-4 h-4",
       medium: "w-5 h-5",
       large: "w-6 h-6"
     };
+    
+    // For debugging
+    console.log('Trying to render icon:', iconName, 'as', pascalCaseName, 'exists:', !!IconComponent);
     
     return IconComponent ? (
       <IconComponent 

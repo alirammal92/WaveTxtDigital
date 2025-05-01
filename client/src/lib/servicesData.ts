@@ -3,7 +3,7 @@ export const serviceData = [
     id: "telecom",
     title: "Telecommunications",
     description: "Comprehensive telecom solutions designed for businesses across the MENA region.",
-    icon: "radio-tower",
+    icon: "antenna",
     subTabs: [
       {
         id: "a2p-sms",
